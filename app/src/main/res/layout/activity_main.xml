@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:background="@drawable/main_background">
+
+    <!-- Logo o ícono de la app -->
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:src="@mipmap/ic_launcher"
+        android:contentDescription="Logo SuelosLab"/>
+
+    <!-- Título principal -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SuelosLab"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textColor="#2C3E50"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="4dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Laboratorio de Suelos y Concretos"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:textColor="#7F8C8D"
+        android:layout_marginBottom="32dp"/>
+
+    <!-- Subtítulo de módulos -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="MÓDULOS DE CÁLCULO"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:letterSpacing="0.1"
+        android:gravity="center"
+        android:textColor="#95A5A6"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Botones con mejor estilo -->
+    <Button
+        android:id="@+id/btnHumedad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="💧 Humedad Natural"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textAllCaps="false"
+        android:backgroundTint="#3498DB"
+        android:padding="12dp"
+        android:layout_marginBottom="10dp"/>
+
+    <Button
+        android:id="@+id/btnProctor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="📊 Proctor 4 puntos"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textAllCaps="false"
+        android:backgroundTint="#E67E22"
+        android:padding="12dp"
+        android:layout_marginBottom="10dp"/>
+
+    <Button
+        android:id="@+id/btnLimites"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="🧪 Límites de Atterberg"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textAllCaps="false"
+        android:backgroundTint="#27AE60"
+        android:padding="12dp"
+        android:layout_marginBottom="10dp"/>
+
+    <Button
+        android:id="@+id/btnDensidad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="⛰️ Densidad de Campo"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textAllCaps="false"
+        android:backgroundTint="#9B59B6"
+        android:padding="12dp"
+        android:layout_marginBottom="10dp"/>
+
+    <Button
+        android:id="@+id/btnGravedad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="⚖️ Gravedad Específica"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textAllCaps="false"
+        android:backgroundTint="#34495E"
+        android:padding="12dp"
+        android:layout_marginBottom="12dp"/>
+
+    <!-- Versión de la app -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="v1.0"
+        android:textSize="12sp"
+        android:gravity="center"
+        android:textColor="#BDC3C7"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="16dp"/>
+
+</LinearLayout>

@@ -1,0 +1,808 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5"
+    android:padding="12dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Título -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🧪 LÍMITES DE ATTERBERG"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="#27AE60"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ASTM D4318"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:textColor="#7F8C8D"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- LÍMITE LÍQUIDO -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="📊 LÍMITE LÍQUIDO (Método multipunto)"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#27AE60"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- Encabezados tabla LL -->
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="1,2,3,4,5,6"
+            android:background="#CCCCCC"
+            android:padding="1dp">
+
+            <TableRow
+                android:background="#27AE60"
+                android:padding="4dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="No."
+                    android:textColor="#FFFFFF"
+                    android:textSize="12sp"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="Golpes"
+                    android:textColor="#FFFFFF"
+                    android:textSize="12sp"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="Cápsula"
+                    android:textColor="#FFFFFF"
+                    android:textSize="12sp"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="Húmedo+recip"
+                    android:textColor="#FFFFFF"
+                    android:textSize="12sp"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="Seco+recip"
+                    android:textColor="#FFFFFF"
+                    android:textSize="12sp"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="Tara"
+                    android:textColor="#FFFFFF"
+                    android:textSize="12sp"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="Humedad%"
+                    android:textColor="#FFFFFF"
+                    android:textSize="12sp"
+                    android:gravity="center"/>
+            </TableRow>
+
+            <!-- Punto 1 -->
+            <TableRow
+                android:background="#FFFFFF"
+                android:padding="4dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="1"
+                    android:gravity="center"/>
+
+                <EditText
+                    android:id="@+id/etGolpes1"
+                    style="@style/CustomEditText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:inputType="number"
+                    android:textSize="12sp"
+                    android:minHeight="30dp"/>
+
+                <EditText
+                    android:id="@+id/etCapsulaLL1"
+                    style="@style/CustomEditText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:inputType="text"
+                    android:textSize="12sp"
+                    android:minHeight="30dp"/>
+
+                <EditText
+                    android:id="@+id/etHumedoLL1"
+                    style="@style/CustomEditText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:inputType="numberDecimal"
+                    android:textSize="12sp"
+                    android:minHeight="30dp"/>
+
+                <EditText
+                    android:id="@+id/etSecoLL1"
+                    style="@style/CustomEditText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:inputType="numberDecimal"
+                    android:textSize="12sp"
+                    android:minHeight="30dp"/>
+
+                <EditText
+                    android:id="@+id/etTaraLL1"
+                    style="@style/CustomEditText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:inputType="numberDecimal"
+                    android:textSize="12sp"
+                    android:minHeight="30dp"/>
+
+                <TextView
+                    android:id="@+id/tvHumedadLL1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="-"
+                    android:gravity="center"
+                    android:textSize="12sp"/>
+            </TableRow>
+
+            <!-- Punto 2 -->
+            <TableRow
+                android:background="#F0F0F0"
+                android:padding="4dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="2"
+                    android:gravity="center"/>
+
+                <EditText
+                    android:id="@+id/etGolpes2"
+                    style="@style/CustomEditText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:inputType="number"
+                    android:textSize="12sp"
+                    android:minHeight="30dp"/>
+
+                <EditText
+                    android:id="@+id/etCapsulaLL2"
+                    style="@style/CustomEditText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:inputType="text"
+                    android:textSize="12sp"
+                    android:minHeight="30dp"/>
+
+                <EditText
+                    android:id="@+id/etHumedoLL2"
+                    style="@style/CustomEditText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:inputType="numberDecimal"
+                    android:textSize="12sp"
+                    android:minHeight="30dp"/>
+
+                <EditText
+                    android:id="@+id/etSecoLL2"
+                    style="@style/CustomEditText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:inputType="numberDecimal"
+                    android:textSize="12sp"
+                    android:minHeight="30dp"/>
+
+                <EditText
+                    android:id="@+id/etTaraLL2"
+                    style="@style/CustomEditText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:inputType="numberDecimal"
+                    android:textSize="12sp"
+                    android:minHeight="30dp"/>
+
+                <TextView
+                    android:id="@+id/tvHumedadLL2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="-"
+                    android:gravity="center"
+                    android:textSize="12sp"/>
+            </TableRow>
+
+            <!-- Punto 3 -->
+            <TableRow
+                android:background="#FFFFFF"
+                android:padding="4dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="3"
+                    android:gravity="center"/>
+
+                <EditText
+                    android:id="@+id/etGolpes3"
+                    style="@style/CustomEditText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:inputType="number"
+                    android:textSize="12sp"
+                    android:minHeight="30dp"/>
+
+                <EditText
+                    android:id="@+id/etCapsulaLL3"
+                    style="@style/CustomEditText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:inputType="text"
+                    android:textSize="12sp"
+                    android:minHeight="30dp"/>
+
+                <EditText
+                    android:id="@+id/etHumedoLL3"
+                    style="@style/CustomEditText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:inputType="numberDecimal"
+                    android:textSize="12sp"
+                    android:minHeight="30dp"/>
+
+                <EditText
+                    android:id="@+id/etSecoLL3"
+                    style="@style/CustomEditText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:inputType="numberDecimal"
+                    android:textSize="12sp"
+                    android:minHeight="30dp"/>
+
+                <EditText
+                    android:id="@+id/etTaraLL3"
+                    style="@style/CustomEditText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:inputType="numberDecimal"
+                    android:textSize="12sp"
+                    android:minHeight="30dp"/>
+
+                <TextView
+                    android:id="@+id/tvHumedadLL3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="-"
+                    android:gravity="center"
+                    android:textSize="12sp"/>
+            </TableRow>
+        </TableLayout>
+
+        <!-- Botón Calcular Humedades LL -->
+        <Button
+            android:id="@+id/btnCalcularHumedadesLL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CALCULAR HUMEDADES LÍMITE LÍQUIDO"
+            android:backgroundTint="#27AE60"
+            android:textSize="12sp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- LÍMITE PLÁSTICO -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="📌 LÍMITE PLÁSTICO"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#27AE60"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- Encabezados tabla LP -->
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="1,2,3,4,5"
+            android:background="#CCCCCC"
+            android:padding="1dp">
+
+            <TableRow
+                android:background="#27AE60"
+                android:padding="4dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="No."
+                    android:textColor="#FFFFFF"
+                    android:textSize="12sp"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="Cápsula"
+                    android:textColor="#FFFFFF"
+                    android:textSize="12sp"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="Húmedo+recip"
+                    android:textColor="#FFFFFF"
+                    android:textSize="12sp"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="Seco+recip"
+                    android:textColor="#FFFFFF"
+                    android:textSize="12sp"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="Tara"
+                    android:textColor="#FFFFFF"
+                    android:textSize="12sp"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="Humedad%"
+                    android:textColor="#FFFFFF"
+                    android:textSize="12sp"
+                    android:gravity="center"/>
+            </TableRow>
+
+            <!-- Punto LP 1 -->
+            <TableRow
+                android:background="#FFFFFF"
+                android:padding="4dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="1"
+                    android:gravity="center"/>
+
+                <EditText
+                    android:id="@+id/etCapsulaLP1"
+                    style="@style/CustomEditText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:inputType="text"
+                    android:textSize="12sp"
+                    android:minHeight="30dp"/>
+
+                <EditText
+                    android:id="@+id/etHumedoLP1"
+                    style="@style/CustomEditText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:inputType="numberDecimal"
+                    android:textSize="12sp"
+                    android:minHeight="30dp"/>
+
+                <EditText
+                    android:id="@+id/etSecoLP1"
+                    style="@style/CustomEditText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:inputType="numberDecimal"
+                    android:textSize="12sp"
+                    android:minHeight="30dp"/>
+
+                <EditText
+                    android:id="@+id/etTaraLP1"
+                    style="@style/CustomEditText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:inputType="numberDecimal"
+                    android:textSize="12sp"
+                    android:minHeight="30dp"/>
+
+                <TextView
+                    android:id="@+id/tvHumedadLP1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="-"
+                    android:gravity="center"
+                    android:textSize="12sp"/>
+            </TableRow>
+
+            <!-- Punto LP 2 -->
+            <TableRow
+                android:background="#F0F0F0"
+                android:padding="4dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="2"
+                    android:gravity="center"/>
+
+                <EditText
+                    android:id="@+id/etCapsulaLP2"
+                    style="@style/CustomEditText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:inputType="text"
+                    android:textSize="12sp"
+                    android:minHeight="30dp"/>
+
+                <EditText
+                    android:id="@+id/etHumedoLP2"
+                    style="@style/CustomEditText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:inputType="numberDecimal"
+                    android:textSize="12sp"
+                    android:minHeight="30dp"/>
+
+                <EditText
+                    android:id="@+id/etSecoLP2"
+                    style="@style/CustomEditText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:inputType="numberDecimal"
+                    android:textSize="12sp"
+                    android:minHeight="30dp"/>
+
+                <EditText
+                    android:id="@+id/etTaraLP2"
+                    style="@style/CustomEditText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:inputType="numberDecimal"
+                    android:textSize="12sp"
+                    android:minHeight="30dp"/>
+
+                <TextView
+                    android:id="@+id/tvHumedadLP2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="-"
+                    android:gravity="center"
+                    android:textSize="12sp"/>
+            </TableRow>
+        </TableLayout>
+
+        <!-- Botón Calcular Humedades LP -->
+        <Button
+            android:id="@+id/btnCalcularHumedadesLP"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CALCULAR HUMEDADES LÍMITE PLÁSTICO"
+            android:backgroundTint="#27AE60"
+            android:textSize="12sp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- Botón Calcular Límites -->
+        <Button
+            android:id="@+id/btnCalcularLimites"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CALCULAR LÍMITES (LL / LP / IP)"
+            android:backgroundTint="#27AE60"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"/>
+
+        <!-- Resultados Principales -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="RESULTADOS FINALES"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="#27AE60"
+            android:layout_marginTop="16dp"/>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="1"
+            android:background="#CCCCCC"
+            android:padding="1dp"
+            android:layout_marginTop="8dp">
+
+            <TableRow
+                android:background="#27AE60"
+                android:padding="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Concepto"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Valor"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:gravity="center"/>
+            </TableRow>
+
+            <TableRow
+                android:background="#FFFFFF"
+                android:padding="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="LÍMITE LÍQUIDO (LL)"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:id="@+id/tvLL"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="-"
+                    android:gravity="center"
+                    android:textStyle="bold"/>
+            </TableRow>
+
+            <TableRow
+                android:background="#F0F0F0"
+                android:padding="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="LÍMITE PLÁSTICO (LP)"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:id="@+id/tvLP"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="-"
+                    android:gravity="center"
+                    android:textStyle="bold"/>
+            </TableRow>
+
+            <TableRow
+                android:background="#FFFFFF"
+                android:padding="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="ÍNDICE DE PLASTICIDAD (IP)"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:id="@+id/tvIP"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="-"
+                    android:gravity="center"
+                    android:textStyle="bold"/>
+            </TableRow>
+        </TableLayout>
+
+        <!-- Parámetros de la curva de fluidez -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CURVA DE FLUIDEZ"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="#27AE60"
+            android:layout_marginTop="16dp"/>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="1"
+            android:background="#CCCCCC"
+            android:padding="1dp"
+            android:layout_marginTop="8dp">
+
+            <TableRow
+                android:background="#27AE60"
+                android:padding="6dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Parámetro"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Valor"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:gravity="center"/>
+            </TableRow>
+
+            <TableRow
+                android:background="#FFFFFF"
+                android:padding="6dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Pendiente (m)"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:id="@+id/tvM"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="-"
+                    android:gravity="center"
+                    android:textStyle="bold"/>
+            </TableRow>
+
+            <TableRow
+                android:background="#F0F0F0"
+                android:padding="6dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Intercepto (b)"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:id="@+id/tvB"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="-"
+                    android:gravity="center"
+                    android:textStyle="bold"/>
+            </TableRow>
+
+            <TableRow
+                android:background="#FFFFFF"
+                android:padding="6dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="R²"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:id="@+id/tvR2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="-"
+                    android:gravity="center"
+                    android:textStyle="bold"/>
+            </TableRow>
+        </TableLayout>
+
+        <!-- Mensaje de validación -->
+        <TextView
+            android:id="@+id/tvValidacion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="14sp"
+            android:gravity="center"
+            android:padding="8dp"
+            android:layout_marginTop="8dp"/>
+
+        <!-- Botón Volver -->
+        <Button
+            android:id="@+id/btnVolverLimites"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="← Volver al menú"
+            android:backgroundTint="#7F8C8D"
+            android:textSize="14sp"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="20dp"/>
+
+    </LinearLayout>
+</ScrollView>

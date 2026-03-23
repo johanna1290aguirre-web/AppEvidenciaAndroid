@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="⚖️ GRAVEDAD ESPECÍFICA"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="#34495E"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ASTM C127 - Partículas gruesas"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:textColor="#7F8C8D"
+            android:layout_marginBottom="20dp"/>
+
+        <!-- Determinación 1 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="📌 DETERMINACIÓN 1"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#34495E"
+            android:layout_marginTop="8dp"/>
+
+        <EditText
+            android:id="@+id/etA1"
+            style="@style/CustomEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="A₁ = Peso seco en aire (g)"
+            android:inputType="numberDecimal"
+            android:layout_marginTop="8dp"/>
+
+        <EditText
+            android:id="@+id/etB1"
+            style="@style/CustomEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="B₁ = Peso SSS en aire (g)"
+            android:inputType="numberDecimal"
+            android:layout_marginTop="8dp"/>
+
+        <EditText
+            android:id="@+id/etC1"
+            style="@style/CustomEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="C₁ = Peso SSS sumergido (g)"
+            android:inputType="numberDecimal"
+            android:layout_marginTop="8dp"/>
+
+        <!-- Determinación 2 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="📌 DETERMINACIÓN 2"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#34495E"
+            android:layout_marginTop="16dp"/>
+
+        <EditText
+            android:id="@+id/etA2"
+            style="@style/CustomEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="A₂ = Peso seco en aire (g) (opcional)"
+            android:inputType="numberDecimal"
+            android:layout_marginTop="8dp"/>
+
+        <EditText
+            android:id="@+id/etB2"
+            style="@style/CustomEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="B₂ = Peso SSS en aire (g) (opcional)"
+            android:inputType="numberDecimal"
+            android:layout_marginTop="8dp"/>
+
+        <EditText
+            android:id="@+id/etC2"
+            style="@style/CustomEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="C₂ = Peso SSS sumergido (g) (opcional)"
+            android:inputType="numberDecimal"
+            android:layout_marginTop="8dp"/>
+
+        <Button
+            android:id="@+id/btnCalcularGs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CALCULAR GRAVEDAD ESPECÍFICA"
+            android:backgroundTint="#34495E"
+            android:textSize="16sp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="RESULTADOS"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="#34495E"
+            android:layout_marginTop="16dp"/>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="1,2,3"
+            android:background="#CCCCCC"
+            android:padding="1dp"
+            android:layout_marginTop="8dp">
+
+            <TableRow
+                android:background="#34495E"
+                android:padding="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Concepto"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Ensayo 1"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Ensayo 2"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Promedio"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:gravity="center"/>
+            </TableRow>
+
+            <TableRow
+                android:background="#FFFFFF"
+                android:padding="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Gs Bulk (base seca)"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:id="@+id/tvGsOD1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="-"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:id="@+id/tvGsOD2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="-"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:id="@+id/tvGsODProm"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="-"
+                    android:gravity="center"/>
+            </TableRow>
+
+            <TableRow
+                android:background="#F5F5F5"
+                android:padding="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Gs Bulk (base SSS)"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:id="@+id/tvGsSSD1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="-"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:id="@+id/tvGsSSD2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="-"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:id="@+id/tvGsSSDProm"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="-"
+                    android:gravity="center"/>
+            </TableRow>
+
+            <TableRow
+                android:background="#FFFFFF"
+                android:padding="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Gs Aparente"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:id="@+id/tvGsAparente1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="-"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:id="@+id/tvGsAparente2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="-"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:id="@+id/tvGsAparenteProm"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="-"
+                    android:gravity="center"/>
+            </TableRow>
+
+            <TableRow
+                android:background="#F5F5F5"
+                android:padding="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Absorción (%)"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:id="@+id/tvAbs1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="-"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:id="@+id/tvAbs2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="-"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:id="@+id/tvAbsProm"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="-"
+                    android:gravity="center"/>
+            </TableRow>
+        </TableLayout>
+
+        <Button
+            android:id="@+id/btnVolverGs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="← Volver al menú"
+            android:backgroundTint="#7F8C8D"
+            android:textSize="14sp"
+            android:layout_marginTop="24dp"/>
+
+    </LinearLayout>
+</ScrollView>
